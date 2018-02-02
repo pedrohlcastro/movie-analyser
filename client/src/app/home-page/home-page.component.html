@@ -1,0 +1,22 @@
+<section class="container-fluid wrapper">
+  <form class="center-search" (ngSubmit)="queryMovie(inputMovie)">
+    <mat-form-field class="input-movie">
+      <input matInput placeholder="Busca" value="Coloque o nome do Filme aqui..." [(ngModel)]="inputMovie" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+  </form>
+  <div class="container" *ngIf="movies">
+    <div class="row" >
+      <div class="col-xl-4 col-lg-3 .col-md-2 col-sm-1" *ngFor="let movie of movies; let i = index">
+        <mat-card>
+          <mat-card-title>{{movie.original_title}}</mat-card-title>
+          <img mat-card-image src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+          <mat-card-actions align="end">
+              <button mat-button (click)="navToAnalize(i)"><mat-icon>info</mat-icon></button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</section>
+
+  

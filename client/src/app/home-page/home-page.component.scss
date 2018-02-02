@@ -1,0 +1,31 @@
+$white: #F2F0FC;
+.center-search{
+    padding-top: 100px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-movie{
+    width: 70%;
+    font-size: 35px;
+}
+
+.wrapper{
+    min-height: 100vh;
+    background-color: $white;
+    padding-bottom: 30px;
+}
+
+mat-card-title{
+    min-height: 80px;
+}
+
+mat-card{
+    margin-top: 55px;
+    img{
+        min-height: 525px;
+        min-width: 350px;
+    }
+}

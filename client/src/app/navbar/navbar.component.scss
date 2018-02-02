@@ -1,0 +1,26 @@
+$main-color: #5C3F72;
+$white: #F2F0FC;
+
+.nav{
+    background-color: $main-color;
+}
+ul {
+    margin-left: 65%;
+    padding-top: 20px;
+    li {
+        float: left;
+        list-style-type: none;
+        margin-right: 50px;
+        a{
+            color: $white;
+            font-size: 35px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    }
+}
+
+ul::after{
+    clear: both;
+    content: '';
+}

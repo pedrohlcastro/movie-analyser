@@ -1,0 +1,11 @@
+{
+    "dev": {
+        "url": "mongodb://localhost:27017/car-analizer-dev"
+    },
+    "test": {
+        "url": "mongodb://localhost:27017/car-analizer-test"
+    },
+    "production": {
+        "url": "mongodb://localhost:27017/car-analizer"
+    }
+}

@@ -1,0 +1,36 @@
+<section *ngIf="movie">
+  <img class="top-image" src="https://image.tmdb.org/t/p/w1280/{{movie.backdrop_path}}">
+  <div class="container">
+    <h1 class="title">{{movie.title}}</h1>
+    <div class="row">
+      <div class="col-3">
+        <img class="top-image" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}">
+      </div>
+      <div class="col-9">
+        <h2>Sinopse</h2>
+        <p>{{movie.overview}}</p>
+        <h2 *ngIf="hasNYTLink">The New York Times Movie Review - Analisado pelo Watson</h2>
+        <div class="row" *ngIf="this.movie.emotions && hasNYTLink">
+          <div class="col-4" *ngFor="let emotion of this.movie.emotions;">
+            <circle-progress 
+              [percent]="emotion.score" 
+              [radius]="50" 
+              [outerStrokeWidth]="10"
+              [innerStrokeWidth]="8"
+              [outerStrokeColor]="emotion.color"
+              [innerStrokeColor]="emotion.color"
+              [animation]="true"
+              [animationDuration]="300"
+            ></circle-progress>
+            {{emotion.tone_name}}
+          </div>
+        </div>
+        <div class="row" *ngIf="!this.movie.emotions && hasNYTLink">
+            <mat-spinner
+              color="#5C3F72">
+            </mat-spinner>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

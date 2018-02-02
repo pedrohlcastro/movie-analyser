@@ -1,0 +1,22 @@
+<section class="how-works">
+  <div class="container">
+    <mat-horizontal-stepper linear="true">
+      <mat-step>
+        <ng-template matStepLabel>Dados dos Filmes</ng-template>
+        <p>Uso API The Movie DB para obter imagens e informações sobre os filmes. Assim que a busca é feita no site a API é ativada usando a base do The Movie DB.</p>
+        <p>Após isso, é feito a apresentação dos resultados usando Angular 4 e Angular Material. Dando a opção do usuário navegar para ver mais informações sobre o filme clicando no botão do Card.</p>
+        <p>Na parte de mais informações o usuário pode ver uma Sinopse do filme e ver as analises de emoção dos reviews feitos.</p>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Review The New York Times</ng-template>
+        <p>Uso API The New York Times para obter review do filme, além disso foi preciso fazer scrapping na página do Jornal.</p>
+        <p>A API do Jornal retorna a URL da review que é passada para o Back end, onde ocorre o scrapping retirando somente o texto do URL, ficando assim um text/plain. Que será analisado pelo Watson e retornado para o front end.</p>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>IBM Watson Tone Analizer</ng-template>
+        <p>Uso do IBM Watson para fazer análise de emoções dentro do texto de review do Jornal.</p>
+        <p>As emoções são recebidas pelo front end, onde ocorre a tradução e onde são setados as cores delas para serem exibidas para o usuário em forma de gráficos de pizza.</p>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+<section>
