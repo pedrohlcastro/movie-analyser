@@ -84,8 +84,8 @@ app.post('/api/getWatsonData', (req, res, next) => {
 
 //Call Angular
 app.all('*', (req, res) => {
-    res.json({result: 'OK'});
-    //res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+    //res.json({result: 'OK'});
+    res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 });
 
 //manage config per environment
