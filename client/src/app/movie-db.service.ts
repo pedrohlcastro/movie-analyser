@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Http, RequestOptions, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
-import cheerio from 'cheerio';
+
+import config from '../../../config.json';
 
 @Injectable()
 export class MovieDbService {
   baseUrl = 'https://api.themoviedb.org/3/';
-  apiKey = '?api_key=ea5e3f4ddfe0b55b57b9033e6ecf87b0';
+  apiKey = `?api_key=${config.tmdbKey}`;
   language = '&language=pt-BR';
+  nytKey = config.nytKey;
 
   constructor(private http: Http) { }
 
@@ -18,10 +20,6 @@ export class MovieDbService {
       return res.json();
     });
   }
-
-  /*cinemaMovies(startDate: string, finalDate: string) {
-    const url = `${this.baseUrl}discover/movie?primary_release_date.gte=${}&primary_release_date.lte=2014-10-22${this.apiKey}`;
-  }*/
 
   getMovie(id: number) {
     const url = `${this.baseUrl}movie/${id}${this.apiKey}${this.language}`;
@@ -40,7 +38,7 @@ export class MovieDbService {
   getNYTimesReview(title: string) {
     const uriText = title.split(' ').join('+');
     // tslint:disable-next-line:max-line-length
-    const url = `https://developer.nytimes.com/proxy/https/api.nytimes.com/svc/movies/v2/reviews/search.json?api-key=b098e9cc7cd14820bbeac644c6b2bb66&query=${uriText}`;
+    const url = `https://developer.nytimes.com/proxy/https/api.nytimes.com/svc/movies/v2/reviews/search.json?api-key=${this.nytKey}&query=${uriText}`;
     return this.http.get(url).map((res) => {
       return res.json();
     });

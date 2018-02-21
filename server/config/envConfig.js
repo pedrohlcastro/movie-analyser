@@ -2,13 +2,7 @@
 
 const ENV = process.env.NODE_ENV || 'dev';
 
-import {getAppEnv} from 'cfenv';
-import mongodbUri from 'mongodb-uri';
-import mongoConfig from './mongoConfig';
-
-const appEnv = getAppEnv();
-
-const configEnv = (app, mongoose) => {
+const configEnv = (app) => {
     //Log Internal Erros - called from next(err)
     app.use((err, req, res, next) => {
         res.status(err.status || 500).json({result: err.msg});
