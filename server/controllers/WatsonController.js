@@ -1,12 +1,13 @@
 'use strict';
 
 import ToneAnalyzerV3 from 'watson-developer-cloud/tone-analyzer/v3';
+import config from '../../config.json';
 
 class WatsonController{
     constructor(){
         this._tone_analyzer = new ToneAnalyzerV3({
-            username: '265631c9-e5aa-4db3-9c77-3af4f86ae400',
-            password: 'ThjjXjpRCst6',
+            username: config.watsonUsername,
+            password: config.watsonPassword,
             version_date: '2017-09-21'
         });
     }
@@ -24,7 +25,7 @@ class WatsonController{
                   resolve(response);
             });
         })
-        
+
     }
 }
 

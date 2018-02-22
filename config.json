@@ -1,4 +1,6 @@
 {
-  "nytKey": "<< NYT API KEY >>",
-  "tmdbKey": "<< THE MOVIE DB API KEY>>"
+  "nytKey": "<< The New York Times API KEY >>",
+  "tmdbKey": "<< The movie DB API KEY >>",
+  "watsonUsername": "<< Watson Tone Analyser username >>",
+  "watsonPassword": "<< Watson Tone Analyser Password >>"
 }
