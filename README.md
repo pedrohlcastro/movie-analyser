@@ -10,3 +10,7 @@ Todas chaves de acesso e credenciais devem ser colocados em `config.json`
 * [The Movie DB Api Key](https://developers.themoviedb.org/3/getting-started/introduction)
 * [Watson Tone Analyser credentials](https://www.ibm.com/watson/services/tone-analyzer/)
 * [The New York Time Movie Review API](https://developer.nytimes.com/signup)
+
+## Live Demo
+
+https://pcastro-movie-analyzer.mybluemix.net/

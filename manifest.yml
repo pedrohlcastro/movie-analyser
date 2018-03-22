@@ -1,6 +1,6 @@
 ---
 applications:
-- name: movie-emotion-analyzer
-  memory: 256M
+- name: pcastro-movie-analyzer
+  memory: 128M
   instances: 1
   random-route: true
